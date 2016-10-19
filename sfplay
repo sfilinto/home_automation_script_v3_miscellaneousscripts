@@ -1,0 +1,14 @@
+#!/bin/bash
+# This script will play a media file
+# copy this file to the path folder
+# run this with the command ./sfplay xx.mp4 OR sudo sfplay xx.mp4
+
+# xbmc-send -a "PlayMedia(/home/osmc/files/1.mp4)"
+
+curl http://192.168.0.33/relay/on
+
+abc=$(pwd)
+echo $abc
+echo $1
+
+xbmc-send -a "PlayMedia($abc/$1)"

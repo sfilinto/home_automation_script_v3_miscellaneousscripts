@@ -1,0 +1,33 @@
+#!/bin/bash -vx
+
+# git clone https://github.com/sfilinto/home_automation_script_v3_miscellaneousscripts.git
+# cd home_automation_script_v3_miscellaneousscripts
+# chmod a+x install_script
+# sudo ./install_script
+
+#########################################################################################
+# mountdrives & unmountdrives
+mkdir /usr/local/bin/misc
+mkdir /home/osmc/Videos
+
+cp mountdrives.sh /usr/local/bin/misc/
+cp unmountdrives.sh /usr/local/bin/misc/
+
+chmod a+x /usr/local/bin/misc/mountdrives.sh
+chmod a+x /usr/local/bin/misc/unmountdrives.sh
+
+#@reboot /usr/local/bin/misc/mountdrives.sh
+
+#########################################################################################
+# sfplay
+cp sfplay /usr/local/bin/misc
+chmod a+x /usr/local/bin/misc/sfplay
+
+#########################################################################################
+# alarm
+cp alarm1.bash /usr/local/bin/misc/
+cp alarm1.mp3 /usr/local/bin/misc/
+chmod a+x /usr/local/bin/misc/alarm1.bash
+
+# m h dom mon dow command
+# 00 05 * * * /usr/local/bin/misc/alarm1.bash
